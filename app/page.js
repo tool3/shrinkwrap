@@ -80,9 +80,9 @@ export default function Page() {
                 <color attach="background" args={[background]} />
                 <Suspense fallback={<Loader />}>
                     {perf ? <Perf align="top-right" /> : null}
-                    <Suspense fallback={null}>
-                        <Wrap scale={2} />
-                    </Suspense>
+
+                    <Wrap scale={2} />
+
                     <Environment files="./textures/environments/studio_small_03_2k.hdr" environmentIntensity={0.3} resolution={1024} />
                     <OrbitControls dampingFactor={0.1} autoRotate={rotate} minZoom={10} maxZoom={100} />
                     {/* <EffectComposer multisampling={0}>
