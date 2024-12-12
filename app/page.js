@@ -75,7 +75,7 @@ export default function Page() {
             <Canvas
                 dpr={[1, 2]}
                 gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
-                camera={{ frustumCulled: true, fov: 50, position: [-10, 0, 25], zoom: 3, }}>
+                camera={{ frustumCulled: true, fov: 50, position: [-10, -10, 25], zoom: 3, }}>
 
                 <color attach="background" args={[background]} />
                 <Suspense fallback={<Loader />}>
@@ -83,7 +83,7 @@ export default function Page() {
 
                     <Wrap scale={2} />
 
-                    <Environment files="./textures/environments/studio_small_03_2k.hdr" environmentIntensity={0.3} resolution={1024} />
+                    <Environment files="./textures/environments/small_harbour_sunset_1k.hdr" environmentIntensity={0.3} resolution={720} />
                     <OrbitControls dampingFactor={0.1} autoRotate={rotate} minZoom={10} maxZoom={100} />
                     {/* <EffectComposer multisampling={0}>
                         {bloom.enabled ?
