@@ -75,7 +75,7 @@ export default function Page() {
             <Canvas
                 dpr={[1, 2]}
                 gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
-                camera={{ frustumCulled: true, fov: 50, position: [-10, -10, 25], zoom: 3, }}>
+                camera={{ frustumCulled: true, fov: 50, position: [-10, 0, 25], zoom: 3, }}>
 
                 <color attach="background" args={[background]} />
                 <Suspense fallback={<Loader />}>
