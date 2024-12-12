@@ -24,8 +24,7 @@ export default function Wrap(props) {
             >
                 <MeshTransmissionMaterial
                     color="#ffffff"
-                    samples={8}
-                    // resolution={1024}
+                    samples={1}
                     transmission={1}
                     roughness={0.15}
                     thickness={0.01}
