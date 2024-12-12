@@ -3,7 +3,7 @@ import { MeshTransmissionMaterial, useGLTF } from '@react-three/drei'
 import { MeshStandardMaterial } from 'three'
 
 export default function Wrap(props) {
-    const { nodes, materials } = useGLTF('/models/wrap.glb')
+    const { nodes, materials } = useGLTF('/models/wrap_1.glb')
     
     return (
         <group {...props} dispose={null}>
@@ -36,4 +36,4 @@ export default function Wrap(props) {
     )
 }
 
-useGLTF.preload('/models/wrap.glb')
+useGLTF.preload('/models/wrap_1.glb')
