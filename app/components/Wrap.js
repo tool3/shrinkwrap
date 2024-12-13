@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useMemo, useRef } from 'react'
 import { MeshTransmissionMaterial, useGLTF } from '@react-three/drei'
 import { MeshStandardMaterial } from 'three'
 
