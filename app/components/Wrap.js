@@ -21,10 +21,10 @@ export default function Wrap(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Cube.geometry}
-                material={transmission}
                 position={[0, 0.169, 0]}
-                scale={[1.964, 1, 1]}
-            />
+                scale={[1.964, 1, 1]}>
+                {transmission}
+            </mesh>
         </group>
     )
 }
