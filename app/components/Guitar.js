@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { MeshTransmissionMaterial, useGLTF } from '@react-three/drei'
 
 export default function Guitar(props) {
-    const { nodes, materials } = useGLTF('/models/guitar.glb')
+    const { nodes, materials } = useGLTF('/models/guitar_1.glb')
     return (
         <group {...props} dispose={null}>
             <mesh
@@ -13,9 +13,9 @@ export default function Guitar(props) {
                     color="#ffffff"
                     resolution={1024}
                     transmission={1}
-                    roughness={0}
-                    thickness={0.01}
-                    ior={1.5}
+                    roughness={0.15}
+                    thickness={0.03}
+                    ior={1.1}
                     chromaticAberration={0}
                 />
             </mesh>
@@ -29,4 +29,4 @@ export default function Guitar(props) {
     )
 }
 
-useGLTF.preload('/models/guitar.glb')
+useGLTF.preload('/models/guitar_1.glb')
