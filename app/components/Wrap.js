@@ -29,7 +29,7 @@ export default function Wrap(props) {
                     roughness={0.15}
                     thickness={0.01}
                     ior={1.5}
-                    resolution={1024}
+                    resolution={720}
                     
                 />
                 {/* <meshBasicMaterial color="red" /> */}
