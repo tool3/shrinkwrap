@@ -24,13 +24,10 @@ export default function Wrap(props) {
             >
                 <MeshTransmissionMaterial
                     color="#ffffff"
-                    samples={1}
                     transmission={1}
                     roughness={0.15}
                     thickness={0.01}
                     ior={1.5}
-                    resolution={720}
-                    
                 />
                 {/* <meshBasicMaterial color="red" /> */}
             </mesh>
