@@ -10,6 +10,7 @@ import Credits from './components/Credit';
 import Debug from './components/Debug';
 import './index.scss';
 import Shrinkwrap from './components/Shrinkwrap';
+import Guitar from './components/Guitar';
 
 function Loader() {
     const { progress } = useProgress();
@@ -51,7 +52,7 @@ export default function Page() {
     }, [])
 
     const { fps, perf, background, rotate } = useControls({
-        rotate: false,
+        rotate: true,
         fps: { value: false, color: 'red' },
         perf: false,
         background: 'black',
@@ -80,7 +81,7 @@ export default function Page() {
                 <Suspense fallback={<Loader />}>
                     {perf ? <Perf align="top-right" /> : null}
 
-                    <Shrinkwrap position={[0, -5, 0]} scale={2} />
+                    <Guitar position={[0, 0, 0]} scale={5} />
 
                     <Environment files="./textures/environments/studio_small_03_2k.hdr" environmentIntensity={0.3} resolution={720} />
                     <OrbitControls dampingFactor={0.1} autoRotate={rotate} minZoom={10} maxZoom={100} />
