@@ -22,9 +22,9 @@ export default function Wrap(props) {
                 position={[0, 0.169, 0]}
                 scale={[1.964, 1, 1]}
             >
-                <MeshTransmissionMaterial
+                <meshStandardMaterial
                     color="#ffffff"
-                    transmission={1}
+                    transmission={0.5}
                     roughness={0.15}
                     thickness={0.01}
                     ior={1.5}
