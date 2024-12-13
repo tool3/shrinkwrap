@@ -1,40 +1,21 @@
-import React, { useRef } from 'react'
-import { MeshTransmissionMaterial, useGLTF } from '@react-three/drei'
-import { MeshNormalMaterial, TextureLoader } from 'three';
-import { useLoader } from '@react-three/fiber';
-import { useControls } from 'leva';
+import { MeshTransmissionMaterial, useGLTF } from '@react-three/drei';
+import React, { useMemo } from 'react';
+import { MeshStandardMaterial } from 'three';
 
 export default function Shrinkwrap(props) {
     const { nodes, materials } = useGLTF('/models/shrinkwrap.glb');
 
-    nodes.Cube.geometry.computeVertexNormals();
+    const material = useMemo(() => new MeshStandardMaterial({ color: 'pink', roughness: 0.4 }), []);
     
-    const options = Array.from({ length: 56 }, (_, i) => 'glass_' + (i + 1) + '.png')
-        .reduce((acc, curr) => {
-            acc[curr.replace('.png', '')] = curr;
-            return acc;
-        }, {});
-
-
-    const matcap = useControls('Cube Matcap', {
-        matcap: {
-            value: 'glass_16.png',
-            options
-        }
-    })
-
-    const [map] = useLoader(TextureLoader, [`/textures/matcaps/${matcap.matcap}`]);
-
     return (
         <group {...props} dispose={null}>
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Suzanne001.geometry}
+                material={material}  
                 position={[-1.546, 2.4, 0]}
-                rotation={[1.236, -0.611, 1.476]}>
-                <meshMatcapMaterial matcap={map} />
-            </mesh>
+                rotation={[1.236, -0.611, 1.476]} />
             <mesh
                 castShadow
                 receiveShadow
@@ -43,7 +24,6 @@ export default function Shrinkwrap(props) {
                 scale={[3.123, 2.218, 2.218]}>
                 <MeshTransmissionMaterial
                     color="#ffffff"
-                    samples={8}
                     resolution={1024}
                     transmission={1}
                     roughness={0}
